@@ -44,16 +44,16 @@
 :root {
     --dark-bg: #111111;
     --secondary-dark: #222222;
-    --accent-color: #c93d80;
-    --accent-color-1: #872c58;
-    --accent-color-2: #cd5a91;
+    --accent-color: #00af7c;
+    --accent-color-1: #00af7c;
+    --accent-color-2: #00af7c;
     --gray-color: #aaaaaa;
     --font-1: 'Abhaya Libre', serif;
     --font-2: 'Open Sans', sans-serif;
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 60px;
 }
 
 h2 {
@@ -190,10 +190,12 @@ a {
 #header {
     transition: all 0.5s ease;
 }
-
+.nav-padding{
+    padding: 0 50px;
+}
 .nav-link {
     border-bottom: 2px solid transparent;
-    font-size: 1.125rem;
+    font-size: 1rem;
 }
 
 .nav-link:hover {
