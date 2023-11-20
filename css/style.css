@@ -44,9 +44,9 @@
 :root {
     --dark-bg: #111111;
     --secondary-dark: #222222;
-    --accent-color: #00af7c;
-    --accent-color-1: #00af7c;
-    --accent-color-2: #00af7c;
+    --accent-color: #e63183;
+    --accent-color-1: #e63183;
+    --accent-color-2: #e63183;
     --gray-color: #aaaaaa;
     --font-1: 'Abhaya Libre', serif;
     --font-2: 'Open Sans', sans-serif;
@@ -195,7 +195,7 @@ a {
 }
 .nav-link {
     border-bottom: 2px solid transparent;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
 
 .nav-link:hover {
@@ -275,7 +275,7 @@ a {
 }
 
 .bg-accent-color {
-    background-color: #009b6e;
+    background-color: #e63183;
 }
 
 .bg-accent-color-1 {

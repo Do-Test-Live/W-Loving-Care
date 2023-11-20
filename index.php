@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['lan'])) {
+    $_SESSION['lan'] = 'CN';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,82 +12,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheet -->
-    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/vendor/fontawesome.css">
-    <link rel="stylesheet" href="css/vendor/brands.css">
-    <link rel="stylesheet" href="css/vendor/regular.css">
-    <link rel="stylesheet" href="css/vendor/solid.css">
-    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>EverCare - 24/7 Home Care and Nursing Service</title>
+    <?php include('include/css.php'); ?>
+    <title>LovingCare - 24/7 Home Care and Nursing Service</title>
 </head>
 
 <body>
-    <script src="js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/swiper-script.js"></script>
-    <script src="js/submit-form.js"></script>
-    <script src="js/vendor/isotope.pkgd.min.js"></script>
 
     <!-- Header -->
-    <section class="sticky-top bg-white">
-        <div>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid nav-padding">
-                    <a class="navbar-brand" href="#">
-                        <div class="logo-container">
-                            <img src="image/logo.png" alt="" class="img-fluid">
-                        </div>
-                    </a>
-                    <button class="navbar-toggler accent-color border-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa-solid fa-bars-staggered"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 font-2 fw-semibold gap-lg-3">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home Care Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Corporate Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Caregiver Center</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Advise & Tips</a>
-                            </li>
-                            <!--<li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Page
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="team.html">Team</a></li>
-                                    <li><a class="dropdown-item" href="help.html">Help</a></li>
-                                    <li><a class="dropdown-item" href="news.html">News</a></li>
-                                    <li><a class="dropdown-item" href="single_post.html">Single Post</a></li>
-                                    <li><a class="dropdown-item" href="404.html">404</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
-                            </li>
-                        </ul>
-                        <a href="#" type="button" class="btn button bg-accent-color me-3" type="submit">Book Service</a>
-                        <a href="#" style="color: #00af7c;"><i class="fa-solid fa-phone"></i>
-                            +123-456-789</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </section>
+    <?php include('include/header.php'); ?>
     <!-- End  of Header -->
 
     <main>
@@ -92,11 +31,28 @@
                 <div class="image-overlay"></div>
                 <div class="d-flex flex-column justify-content-center gap-3 h-100 position-relative"
                     style="max-width: 768px; z-index: 2;">
-                    <h1 class="text-title text-white fw-bold font-1 lh-1">LOOKING FOR TRUSTED NURSING CARE  <br> AT HOME?</h1>
-                    <p class="text-white f-18 text-font">Let your loved ones age in the comfort of their own home. Find professional nursing care from trusted caregivers within 24 hours.</p>
+                    <?php
+                    if ($_SESSION['lan'] == 'CN') {
+                        ?>
+                        <h1 class="text-title text-white fw-bold font-1 lh-1">你在尋找可信賴的 <br> 私家看護嗎?</h1>
+                        <p class="text-white f-18 text-font">
+                            在24小時內聘請專業的護理人員提供優質上門護理服務，讓你在安全舒適的家中得到適切的照顧。</p>s
+                        <?php
+                    } else {
+                        ?>
+                        <h1 class="text-title text-white fw-bold font-1 lh-1">LOOKING FOR TRUSTED NURSING CARE <br> AT
+                            HOME?</h1>
+                        <p class="text-white f-18 text-font">Let your loved ones age in the comfort of their own home.
+                            Find professional nursing care from trusted caregivers within 24 hours.</p>
+                        <?php
+                    }
+                    ?>
+
                     <div>
                         <a type="button" href="#"
-                            class="btn bg-accent-color text-font rounded-0"><i class="fa-brands fa-whatsapp"></i> Whatsapp Us</a>
+                           class="btn bg-accent-color text-font rounded-0"> <i
+                                    class="fa-brands fa-whatsapp"></i> <?php if ($_SESSION['lan'] == 'CN') echo '與我們WhatsApp'; else echo 'Whatsapp Us'; ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -119,27 +75,38 @@
         <section class="section">
             <div class="r-container">
                 <div class="d-flex flex-column gap-3 justify-content-center text-center">
-                    <h6 class="accent-color font-2 ">TRUSTED CARE SUPPORT FOR FAMILIES AND ORGANISATIONS</h6>
-                    <h3 class="text-black font-1 lh-1 fw-semibold">OUR SERVICES</h3>
+                    <h6 class="accent-color font-2 "><?php if ($_SESSION['lan'] == 'CN') echo '值得信賴的護理服務'; else echo 'TRUSTED CARE SUPPORT FOR FAMILIES AND ORGANISATIONS'; ?></h6>
+                    <h3 class="text-black font-1 lh-1 fw-semibold"><?php if ($_SESSION['lan'] == 'CN') echo '上門照顧及私家看護服務'; else echo 'OUR SERVICES'; ?></h3>
                     <p class="text-gray mx-auto" style="max-width: 768px;">
-                        At Evercare, our goal is to empower your loved ones to live with dignity and independence. As a
-                        professional nursing agency, we provide home care services for families and health professional
-                        staffing relief for organisations in Hong Kong. Our platform has over 20,000 caregivers who are
-                        equipped to handle everything from daily elderly assistance to post-operative care.
+                        我們的目標是令你的家人可以生活得更獨立、更有尊嚴。我們的專業護理人員提供上門私家看護及長者照顧服務，
+                        協助顧客於家中康復，令家人再無後顧之憂。由照顧長者個人護理，到提供專業醫療服務一應俱全，我們不同類型的居家護理方案能確保一切符合你的需要。
                     </p>
                     <div class="row row-cols-1 row-cols-lg-4">
                         <div class="col">
                             <div class="card p-3 with-border-bottom border-0 shadow rounded-3">
                                 <img src="image/image-600x400-1.jpg" class="card-img-top rounded-3" alt="...">
                                 <div class="card-body ">
-                                    <h5 class="font-1 fw-bold">Elderly Care</h5>
-                                    <p class="text-gray">From daily companionship to overnight nursing care, our
-                                        caregivers can assist elderlies with personal care tasks (e.g bathing, lifting)
-                                        and specialised medical care (e.g stoma care, home dialysis).</p>
+                                    <h5 class="font-1 fw-bold">長者護理</h5>
+                                    <?php
+                                    if($_SESSION['lan'] == 'CN'){
+                                        ?>
+                                        <p class="text-gray">
+                                            基本至日常生活協助，複雜至為長期病患者提供看護服務，我們的護理人員都可以提供全面的上門長者照顧服務。能夠回應長者最逼切的需要之餘，也可成為長者的的良伴。</p>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <p class="text-gray">From daily companionship to overnight nursing care, our
+                                            caregivers can assist elderlies with personal care tasks (e.g bathing, lifting)
+                                            and specialised medical care (e.g stoma care, home dialysis).</p>
+                                        <?php
+                                    }
+
+                                    ?>
+
                                     <div class="d-flex justify-content-center">
                                         <a type="button" href="#"
-                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2">Read
-                                            More <i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
+                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2"><?php if($_SESSION['lan'] == 'CN') echo '閱讀更多'; else echo 'Read
+                                            More';?><i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -148,14 +115,27 @@
                             <div class="card p-3 with-border-bottom border-0 shadow rounded-3">
                                 <img src="image/image-600x400-2.jpg" class="card-img-top rounded-3" alt="...">
                                 <div class="card-body ">
-                                    <h5 class="font-1 fw-bold">Specialist Care</h5>
-                                    <p class="text-gray">We provide elderlies and patients dealing with stroke, cancer,
-                                        dementia, diabetes and cardiovascular diseases with the specialised support they
-                                        need to improve and recover long-term.</p>
+                                    <h5 class="font-1 fw-bold"><?php if ($_SESSION['lan'] == 'CN') echo '專科護理'; else echo 'Specialist Care'; ?></h5>
+                                    <?php
+                                    if($_SESSION['lan'] == 'CN'){
+                                        ?>
+                                        <p class="text-gray">
+                                            我們為中風、癌症、認知障礙症、長期臥床、糖尿病和心血管疾病人提供貼心的上門看護服務，包括臨時照顧、短期照顧、長期照顧、日間及夜間照顧。</p>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <p class="text-gray">We provide elderlies and patients dealing with stroke, cancer,
+                                            dementia, diabetes and cardiovascular diseases with the specialised support they
+                                            need to improve and recover long-term.</p>
+                                        <?php
+                                    }
+
+                                    ?>
+
                                     <div class="d-flex justify-content-center">
                                         <a type="button" href="#"
-                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2">Read
-                                            More <i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
+                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2"><?php if($_SESSION['lan'] == 'CN') echo '閱讀更多'; else echo 'Read
+                                            More';?><i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -164,14 +144,26 @@
                             <div class="card p-3 with-border-bottom border-0 shadow rounded-3">
                                 <img src="image/image-600x400-3.jpg" class="card-img-top rounded-3" alt="...">
                                 <div class="card-body ">
-                                    <h5 class="font-1 fw-bold">Rehabilitation Care</h5>
-                                    <p class="text-gray">Ready for discharge? Our in-home physiotherapy, occupational
-                                        therapy and post-operative care services can help your loved one regain their
-                                        independence and recover with strength.</p>
+                                    <h5 class="font-1 fw-bold"><?php if ($_SESSION['lan'] == 'CN') echo '復康護理'; else echo 'SRehabilitation Care'; ?></h5>
+                                    <?php
+                                    if($_SESSION['lan'] == 'CN'){
+                                        ?>
+                                        <p class="text-gray">
+                                            準備出院？我們的上門職業治療、物理治療和手術後看護服務助你的家人順利從醫院過渡到家中、設計個人復康計劃，預防併發症，重新自立。</p>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <p class="text-gray">Ready for discharge? Our in-home physiotherapy, occupational
+                                            therapy and post-operative care services can help your loved one regain their
+                                            independence and recover with strength.</p>
+                                        <?php
+                                    }
+
+                                    ?>
                                     <div class="d-flex justify-content-center">
                                         <a type="button" href="#"
-                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2">Read
-                                            More <i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
+                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2"><?php if($_SESSION['lan'] == 'CN') echo '閱讀更多'; else echo 'Read
+                                            More';?><i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -180,21 +172,32 @@
                             <div class="card p-3 with-border-bottom border-0 shadow rounded-3">
                                 <img src="image/image-600x400-3.jpg" class="card-img-top rounded-3" alt="...">
                                 <div class="card-body ">
-                                    <h5 class="font-1 fw-bold">Medical Staffing</h5>
-                                    <p class="text-gray">We help public and private organisations identify healthcare
-                                        professional and therapist staffing relief within 24 hours.</p>
+                                    <h5 class="font-1 fw-bold"><?php if ($_SESSION['lan'] == 'CN') echo '外購替補護理員'; else echo 'Medical Staffing'; ?></h5>
+                                    <?php
+                                    if($_SESSION['lan'] == 'CN'){
+                                        ?>
+                                        <p class="text-gray">
+                                            我們幫助公共和私人機構在 24 小時內配對相關專業護理人員和治療師。</p>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <p class="text-gray">We help public and private organisations identify healthcare
+                                            professional and therapist staffing relief within 24 hours.</p>
+                                        <?php
+                                    }
+
+                                    ?>
                                     <div class="d-flex justify-content-center">
                                         <a type="button" href="#"
-                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2">Read
-                                            More <i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
+                                           class="btn post-button font-2 d-flex flex-row align-items-center gap-2"><?php if($_SESSION['lan'] == 'CN') echo '閱讀更多'; else echo 'Read
+                                            More';?><i class="fa-solid fa-circle-arrow-right mt-1"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center my-4">
-                        <a href="#" type="button" class="btn bg-accent-color p-3 font-2">Home Care
-                            Services</a>
+                        <a href="#" type="button" class="btn bg-accent-color p-3 font-2">尋找其他居家護理服務</a>
                     </div>
                 </div>
             </div>
@@ -206,15 +209,28 @@
                 <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col mb-3">
                         <div class="d-flex flex-column gap-3 h-100 justify-content-center">
-                            <h3 class="font-1 lh-1 fw-bold fs-1 mb-3">START FINDING CARE FOR YOUR LOVED ONES</h3>
+                            <h3 class="font-1 lh-1 fw-bold fs-1 mb-3"><?php if($_SESSION['lan']) echo "為你的家人找到最適合的護理服務"; else echo "START FINDING CARE FOR YOUR LOVED ONES";?></h3>
                             <div class="d-flex flex-column gap-5">
                                 <div class="d-flex flex-row gap-3 align-items-center">
                                     <div class="d-flex flex-column">
-                                        <p class="text-gray m-0">
-                                            Fill in your contact information and one of our care specialists will reach
-                                            out within 24 hours. Once we get a better understanding of your needs, we
-                                            can start finding caregivers to look after your loved ones.
-                                        </p>
+                                        <?php
+                                        if($_SESSION['lan'] == 'EN'){
+                                            ?>
+                                            <p class="text-gray m-0">
+                                                Fill in your contact information and one of our care specialists will reach
+                                                out within 24 hours. Once we get a better understanding of your needs, we
+                                                can start finding caregivers to look after your loved ones.
+                                            </p>
+                                            <?php
+                                        } else{
+                                            ?>
+                                            <p class="text-gray m-0">
+                                                你只需花10秒填妥以下表格，我們的護理專家將會在24小時內聯絡你以便了解家人的健康狀況，讓我們未來為你挑選最適合的護理人員提供上門照顧服務。
+                                            </p>
+                                            <?php
+                                        }
+                                        ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -223,8 +239,6 @@
                     <div class="col mb-3">
                         <div class="bg-accent-color rounded-4">
                             <div class="h-100 d-flex flex-column p-5">
-                                <h6 class="font-2 text-white">Fill The Form</h6>
-                                <h3 class="font-1 lh-1 fw-bold fs-1 mb-3 text-white">Get In Touch</h3>
                                 <div class="success_msg toast align-items-center w-100 shadow-none mb-3 border border-success rounded-0 my-4"
                                      role="alert" aria-live="assertive" aria-atomic="true">
                                     <div class="d-flex p-2">
@@ -260,11 +274,11 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <input type="text" class="form-control py-2 px-4" name="name"
-                                                       placeholder="First Name" required>
+                                                       placeholder="<?php if($_SESSION['lan'] == 'CN') echo "名字*"; else echo "First Name*";?>" required>
                                             </div>
                                             <div class="col-6">
                                                 <input type="text" class="form-control py-2 px-4" name="name"
-                                                       placeholder="Last Name" required>
+                                                       placeholder="<?php if($_SESSION['lan'] == 'CN') echo "姓氏*"; else echo "Last Name*";?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -272,11 +286,11 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <input type="text" class="form-control py-2 px-4" name="name"
-                                                       placeholder="Contact Number" required>
+                                                       placeholder="<?php if($_SESSION['lan'] == 'CN') echo "聯絡電話*"; else echo "Contact Number*";?>" required>
                                             </div>
                                             <div class="col-6">
                                                 <input type="text" class="form-control py-2 px-4" name="name"
-                                                       placeholder="Email Address" required>
+                                                       placeholder="<?php if($_SESSION['lan'] == 'CN') echo "電郵地址*"; else echo "Email Address*";?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -738,113 +752,9 @@
 
     </main>
 
-    <footer>
-        <section class="py-5 position-relative" style="background-image: url(image/image-1920x900-2.jpg);">
-            <div class="r-container">
-                <div class="image-overlay-2"></div>
-                <div class="position-relative" style="z-index: 2;">
-                    <div class="row row-cols-1 row-cols-lg-2 text-lg-start text-center px-lg-0 px-3">
-                        <div class="col">
-                            <h4 class="text-white font-1 fw-bold fs-1">
-                                Give Your Loved Ones Quality Care You Can Trust</h4>
-                        </div>
-                        <div class="col">
-                            <div class="d-flex justify-content-lg-end justify-content-center h-100 align-items-center">
-                                <a href="#" type="button" class="btn btn-dark px-4 py-3 fs-5">Contact Us Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="px-lg-0 px-4 py-lg-5 py-4 bg-accent-color-1">
-            <div class="r-container text-white">
-                <div class="row row-cols-1 row-cols-lg-4">
-                    <div class="col col-lg-4 mb-3">
-                        <div class="d-flex flex-column h-100 justify-content-center">
-                            <div class="logo-container">
-                                <img src="image/logo-2.png" alt="Logo" class="img-fluid">
-                            </div>
-                            <p>
-                                Suspendisse congue tincidunt nisi, in eleifend metus placerat eu. Nunc eget tristique
-                                nisi. Nunc a eros vitae magna bibendum tempus. Mauris ipsum enim, sollicitudin sit amet
-                                consequat at.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-lg-2 mb-3">
-                        <div class="d-flex flex-column">
-                            <h5 class="font-1 fw-bold mb-3">Quick Link</h5>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> About Us</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Services</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Delivery</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> FAQ</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-2 mb-3">
-                        <div class="d-flex flex-column">
-                            <h5 class="font-1 fw-bold mb-3">Information</h5>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> About Us</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Services</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Delivery</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> FAQ</a>
-                                <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                        class="fa-solid fa-chevron-right accent-color"></i> Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-4 mb-3">
-                        <div class="d-flex flex-column mb-3">
-                            <h5 class="font-1 fw-bold mb-2">Get In Touch</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <div class="d-flex flex-wrap">
-                                <div class="d-flex flex-row me-2 gap-2 align-items-center">
-                                    <i class="fa-solid fa-phone"></i>
-                                    3905 4000
-                                </div>
-                                <div class="d-flex flex-row me-2 gap-2 align-items-center">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    careteam@yourevercare.com
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column mb-3">
-                            <h5 class="font-1 fw-bold mb-2">Social Media :</h5>
-                            <div class="social-container">
-                                <a href="https://www.facebook.com/" class="social-item">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="https://www.twitter.com/" class="social-item">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a href="https://www.youtube.com/" class="social-item">
-                                    <i class="fa-brands fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-100" style="border-bottom: 1px solid var(--accent-color-2);"></div>
-                <div class="text-center p-2">© Copyright 2023. All Rights Reserved. Rometheme</div>
-            </div>
-        </section>
-    </footer>
+    <?php include('include/footer.php'); ?>
 
-    <script src="js/vendor/fslightbox.js"></script>
-    <script src="js/masonry.js"></script>
+    <?php include('include/js.php'); ?>
 </body>
 
 </html>
