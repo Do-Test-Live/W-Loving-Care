@@ -69,15 +69,13 @@
                 <div class="col col-lg-4 mb-3">
                     <div class="d-flex flex-column mb-3">
                         <h5 class="font-1 fw-bold mb-2">Get In Touch</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <div class="d-flex flex-wrap">
-                            <div class="d-flex flex-row me-2 gap-2 align-items-center">
+                        <div class="">
+                            <div class="me-2 gap-2 align-items-center">
                                 <i class="fa-solid fa-phone"></i>
-                                3905 4000
-                            </div>
-                            <div class="d-flex flex-row me-2 gap-2 align-items-center">
-                                <i class="fa-solid fa-envelope"></i>
-                                careteam@yourevercare.com
+                                67321204
+                                <br/>
+                                <i class="fa-solid fa-envelope mt-2"></i>
+                                lovingcare.team@gmail.com
                             </div>
                         </div>
                     </div>
@@ -98,7 +96,7 @@
                 </div>
             </div>
             <div class="w-100" style="border-bottom: 1px solid var(--accent-color-2);"></div>
-            <div class="text-center p-2">© Copyright 2023. All Rights Reserved. Rometheme</div>
+            <div class="text-center p-2">© Copyright 2023. All Rights Reserved.</div>
         </div>
     </section>
 </footer>
