@@ -26,9 +26,7 @@
                             <img src="image/logo-2.png" alt="Logo" class="img-fluid">
                         </div>
                         <p>
-                            Suspendisse congue tincidunt nisi, in eleifend metus placerat eu. Nunc eget tristique
-                            nisi. Nunc a eros vitae magna bibendum tempus. Mauris ipsum enim, sollicitudin sit amet
-                            consequat at.
+                            慈爱是由擁有超過20年於醫院,護養院工 作經驗之資深註冊護士主理,致力為有護理 需求之人士,機構,公營及私家醫院在解决 人手方面,提供優質的護理服務及人手。
                         </p>
                     </div>
                 </div>
@@ -37,15 +35,15 @@
                         <h5 class="font-1 fw-bold mb-3">Quick Link</h5>
                         <div class="d-flex flex-column gap-2">
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> About Us</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 主頁</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Services</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 私家看護</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Delivery</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 人手方案</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> FAQ</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 陪診服務</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Contact</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 起居照顧服務</a>
                         </div>
                     </div>
                 </div>
@@ -54,15 +52,13 @@
                         <h5 class="font-1 fw-bold mb-3">Information</h5>
                         <div class="d-flex flex-column gap-2">
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> About Us</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 保健員</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Services</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 服務收费</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Delivery</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 服務細則</a>
                             <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> FAQ</a>
-                            <a href="#" class="d-flex flex-row gap-2 align-items-center link-light"><i
-                                    class="fa-solid fa-chevron-right accent-color"></i> Contact</a>
+                                    class="fa-solid fa-chevron-right accent-color"></i> 人員聯絡我們</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +68,7 @@
                         <div class="">
                             <div class="me-2 gap-2 align-items-center">
                                 <i class="fa-solid fa-phone"></i>
-                                67321204
+                                (852) 67321204
                                 <br/>
                                 <i class="fa-solid fa-envelope mt-2"></i>
                                 lovingcare.team@gmail.com
@@ -96,7 +92,7 @@
                 </div>
             </div>
             <div class="w-100" style="border-bottom: 1px solid var(--accent-color-2);"></div>
-            <div class="text-center p-2">© Copyright 2023. All Rights Reserved.</div>
+            <div class="text-center p-2">© Copyright 2023. All Rights Reserved. Powered by ngt.hk.</div>
         </div>
     </section>
 </footer>

@@ -675,7 +675,7 @@ a {
 
 .card.with-border-bottom {
     border-bottom: 3px solid var(--accent-color) !important;
-    height: 500px;
+    height: 410px;
 }
 
 .list-group .list-group-item {
